@@ -1,1 +1,5 @@
-
+.root {
+    background-color: rgb(51, 139, 255);
+    min-width: 100%;
+    min-height: 100%;
+}

@@ -1,44 +1,46 @@
-import React, { Component } from 'react';
-import Bootstrap from 'bootstrap'
+import React, { Component } from "react";
+import { Button, Form } from "react-bootstrap";
+import './Login.css';
 
-class Login extends Component {
+export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            email: '',
+            password: ''
         }
     }
 
     render() {
         return (
-            <div>
-                <form>
-                    <h3>Sign In</h3>
-
-                    <div className="form-group">
-                        <label>Email address</label>
-                        <input type="email" className="form-control" placeholder="Enter email" />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Enter password" />
-                    </div>
-
-                    <div className="form-group">
-                        <div className="custom-control custom-checkbox">
-                            <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                            <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                        </div>
-                    </div>
-
-                    <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                    <p className="forgot-password text-right">
-                        Forgot <a href="#">password?</a>
-                    </p>
-                </form>
+            <div class="Login">
+                <div class="Login-container">
+                    <h1>Willy Wangky Factory</h1>
+                    <Form>
+                        <h2>Login</h2>
+                        <Form.Group size="lg" controlId="email">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
+                            autoFocus
+                            type="email"
+                            value={this.email}
+                            onChange={(e) => this.setState({email : e.target.value})}
+                        />
+                        </Form.Group>
+                        <Form.Group size="lg" controlId="password">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            value={this.password}
+                            onChange={(e) => this.setState({password : e.target.value})}
+                        />
+                        </Form.Group>
+                        <Button block size="lg" type="submit" disabled={false}>
+                            Login
+                        </Button>
+                    </Form>
+                </div>
             </div>
-        )
+        );
     }
 }
-
