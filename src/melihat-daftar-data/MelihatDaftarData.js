@@ -9,6 +9,8 @@ import { Table } from 'react-bootstrap';
  *  coklat: ['cadburry', 'bengbeng', 'silverqueen'],
  *  harga: [1000, 2000, 3000]
  * }
+ * Contoh penggunaan:
+ * <MelihatDaftarData data={exampleData} />
  */
 
 const MelihatDaftarData = (props) => {
