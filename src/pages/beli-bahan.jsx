@@ -15,10 +15,14 @@ const DaftarPesananCoklat = () => {
               listBahan.map((value, index) => {
                 return (
                   <a className="dropdown-item">
-                    <div className="custom-control custom-checkbox flex flex-row justify-content-between w-100">
-                      <input type="checkbox" className="custom-control-input" id={"checkbox" + (index + 1)} />
-                      <label className="custom-control-label" for={"checkbox" + (index + 1)} value={value}>{value}</label>
-                      <p className="custom"
+                    <div className="flex flex-row justify-content-between w-100">
+                      <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id={"checkbox" + (index + 1)} />
+                        <label className="custom-control-label" for={"checkbox" + (index + 1)} value={value}>{value}</label>
+                      </div>
+                      <p>Yoi</p>
+                      <p>Yoi</p>
+                      <p>Kripto Mantap</p>
                     </div>
                   </a>
                 )
