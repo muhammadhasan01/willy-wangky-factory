@@ -41,6 +41,7 @@ const Routes = () => {
           <BuatCoklat />
         </Route>
         <Route path="/login">
+        {/* TODO: Handle Logout */}
           <Login />
         </Route>
         <Route path="/">
