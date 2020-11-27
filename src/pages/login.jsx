@@ -10,6 +10,16 @@ export default class Login extends Component {
             password: ''
         }
     }
+    
+    formIsComplete() {
+        return this.state.email !== '' && this.state.password !== '';
+    }
+
+    handleClickLogin = () => {
+        if (this.formIsComplete()) {
+            this.props.history.push("/");
+        }
+    }
 
     render() {
         return (
@@ -37,7 +47,7 @@ export default class Login extends Component {
                             onChange={(e) => this.setState({password : e.target.value})}
                         />
                         </Form.Group>
-                        <Button block size="lg" type="submit" disabled={false}>
+                        <Button block size="lg" disabled={!this.formIsComplete()} onClick={this.handleClickLogin}>
                             Login
                         </Button>
                     </Form>

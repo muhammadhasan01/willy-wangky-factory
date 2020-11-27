@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import {DashboardLayout} from '../components/Layout';
+import { DashboardLayout } from '../components/Layout';
 
 const DaftarPesananCoklat = () => {
   const [listBahan, setListBahan] = useState(["Bahan Satu", "Bahan Dua", "Bahan Tiga"]);

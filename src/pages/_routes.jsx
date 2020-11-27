@@ -40,10 +40,8 @@ const Routes = () => {
         <Route path="/buat-coklat">
           <BuatCoklat />
         </Route>
-        <Route path="/login">
+        <Route path="/login" component={Login}/>
         {/* TODO: Handle Logout */}
-          <Login />
-        </Route>
         <Route path="/">
           <HomePage />
         </Route>
