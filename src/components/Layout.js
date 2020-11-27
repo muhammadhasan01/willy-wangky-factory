@@ -6,10 +6,10 @@ import BodyWrapper from "./BodyWrapper";
 export const DashboardLayout = ({ children }) => {
   return (
     <BodyWrapper>
-      <div className="flex h-screen bg-white">
+      <div className="flex h-100 bg-light">
         <NavSidebar />
 
-        <div className="flex flex-row flex-1 overflow-hidden">
+        <div className="flex flex-row flex-1">
           <main className="flex content flex-fill p-5">
             <section className="sm:flex-row flex flex-row flex-1">
               <div

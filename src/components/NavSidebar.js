@@ -11,7 +11,7 @@ export const NavSidebar = () => {
     <React.Fragment>
 
       <div
-        className={`inset-y-0 left-0 z-30 w-64 translate-x-0 bg-gray-100 border-r-2 lg:translate-x-0 lg:static lg:inset-0`}
+        className={`h-100 w-64 bg-white`}
       >
         <div className="flex items-center justify-center mt-10 text-center py-6">
           <span className="mx-2 text-2xl font-semibold text-black">
@@ -67,7 +67,7 @@ export const NavSidebar = () => {
                 itemId: '/beli-bahan-dari-supplier'
               },
               {
-                title: 'Buat Coklat',
+                title: 'Produksi Coklat',
                 itemId: '/buat-coklat'
               },
               {

@@ -72,7 +72,7 @@ const MelihatDaftarData = (props) => {
 
     return (
         <div>
-            <Table striped bordered hover responsive>
+            <Table striped bordered hover responsive style={{marginTop: 20}} className='text-center'>
 			{showKeyHeader(dataKeys)}
             {showKeyBody(keyIndices, dataKeys)}
             </Table>
