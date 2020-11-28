@@ -60,8 +60,8 @@ const BuatCoklat = () => {
     <DashboardLayout>
       <div className='h3 text-center'>Produksi Coklat</div>
       <br/><br/>
-      <div className='h6'>Pilih coklat yang ingin di tambah :</div>
-      <form>
+      <form className='form-control'>
+        <div className='h6'>Pilih coklat yang ingin di tambah :</div>
         <select class="custom-select col-6" id="c_name" required>
           {/* <option selected>Choose...</option> */}
           {chocolates.map(function (i) {
@@ -70,7 +70,10 @@ const BuatCoklat = () => {
         </select>
         <br/><br/>
         <div className='h6'>Banyaknya coklat yang ingin di tambah :</div>
-        <input id="b_coklat" type="number" className="form-group form-control col-6" placeholder="Banyaknya Coklat" required/>
+        <div className='item-center text-center'>
+          <input id="b_coklat" type="number" className="form-group form-control" placeholder="Banyaknya Coklat" required/>
+        </div>
+        <br/>
         <button type="submit" onClick={handleClickProduksi} className="form-group btn btn-primary">PRODUKSI</button>
       </form>
     </DashboardLayout>

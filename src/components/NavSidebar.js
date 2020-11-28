@@ -11,7 +11,7 @@ export const NavSidebar = () => {
     <React.Fragment>
 
       <div
-        className={`h-100 w-64 bg-white`}
+        className={`h-100 w-64 bg-white shadow p-3 mb-5 rounded`}
       >
         <div className="flex items-center justify-center mt-10 text-center py-6">
           <span className="mx-2 text-2xl font-semibold text-black">
