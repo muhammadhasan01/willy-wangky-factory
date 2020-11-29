@@ -60,8 +60,8 @@ const BuatCoklat = () => {
     <DashboardLayout>
       <div className='h3 text-center'>Produksi Coklat</div>
       <br/><br/>
-      <form className='form-control'>
         <div className='h6'>Pilih coklat yang ingin di tambah :</div>
+      <form className='form-control'>
         <select class="custom-select col-6" id="c_name" required>
           {/* <option selected>Choose...</option> */}
           {chocolates.map(function (i) {

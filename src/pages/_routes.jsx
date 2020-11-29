@@ -15,11 +15,10 @@ import BuatCoklat from './buat-coklat';
 import Login from './login';
 
 const Routes = () => {
-  const checkCookie = (target, redirect) => {
+  const checkCookie = () => {
     let cookies = new Cookies();
     let username = cookies.get('username');
     let password = cookies.get('password');
-    let temp = "";
     let return_val = false;
     if (username !== undefined && password !== undefined) {
       let http = new XMLHttpRequest();
@@ -36,51 +35,55 @@ const Routes = () => {
       http.onreadystatechange = () => {
           if (http.readyState === 4 && http.status === 200) {
               let msg = (new DOMParser()).parseFromString(http.responseText, 'text/xml')
-              temp = msg;
               return_val = msg.getElementsByTagName("return")[0].innerHTML !== "false";
+              if (!return_val) {
+                console.log(msg);
+              }
           }
       }
       http.setRequestHeader('Content-Type', 'text/xml');
       http.send(body);
-      console.log(temp);
-      console.log(return_val);
-      return return_val
     }
+    console.log(return_val);
+    // if (return_val && redirect === '/') {
+    //   history.push(redirect);
+    // }
+    return return_val
   }
 
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/melihat-daftar/pesanan-coklat-wweb">
-          { checkCookie(<DaftarPesananCoklat />, <Redirect to="/login"/>) }
+          { checkCookie() ? <DaftarPesananCoklat /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/melihat-daftar/coklat">
-          { checkCookie(<DaftarCoklat />, <Redirect to="/login"/>) }
+          { checkCookie() ? <DaftarCoklat /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/melihat-daftar/bahan-coklat">
-          { checkCookie(<BahanCoklat />, <Redirect to="/login"/>) }
+          { checkCookie() ? <BahanCoklat /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/melihat-daftar/resep-coklat">
-          { checkCookie(<ResepCoklat />, <Redirect to="/login"/>) }
+          { checkCookie() ? <ResepCoklat /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/melihat-daftar/permintaan-tambah-stok">
-          { checkCookie(<PermintaanTambahStok />, <Redirect to="/login"/>) }
+          { checkCookie() ? <PermintaanTambahStok /> : <Redirect to="/login" /> }
         </Route>
         <Route path="/lihat-saldo-pabrik">
-          { checkCookie(<SaldoPabrik />, <Redirect to="/login"/>) }
+          { checkCookie() ? <SaldoPabrik /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/beli-bahan-dari-supplier">
-          { checkCookie(<BeliBahan />, <Redirect to="/login"/>) }
+          { checkCookie() ? <BeliBahan /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/buat-coklat">
-          { checkCookie(<BuatCoklat />, <Redirect to="/login"/>) }
+          { checkCookie() ? <BuatCoklat /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/login">
-          { checkCookie(<Redirect to="/" />, <Login />) ? <Redirect to="/" /> : <Login /> }
+          { checkCookie("/") ? <Redirect to="/" /> : <Login /> }
         </Route>
         {/* TODO: Handle Logout */}
         <Route path="/">
-          { checkCookie(<HomePage />, <Redirect to="/login"/>) }
+          { checkCookie("/login") ? <HomePage /> : <Redirect to="/login"/> }
         </Route>
       </Switch>
     </BrowserRouter>
