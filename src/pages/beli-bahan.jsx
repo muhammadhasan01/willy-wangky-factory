@@ -176,18 +176,17 @@ const DaftarPesananCoklat = () => {
   }
 
 
+  // notify react buat rerender pas totalHarga ganti
   useEffect(() => {
     onLoad();
   }, [])
 
-  useEffect(() => {
-    console.log("~~~~~~");
-    console.log("checkBahan: ", checkBahan);
-    console.log("jumlahBahan: ", jumlahBahan);
-    console.log("~~~~~~");
+  // notify react buat rerender pas checkBahan dan jumlahBahan ganti
+  useEffect(() => { 
     handleChangeHarga()
     }, [checkBahan, jumlahBahan])
 
+  // notify react buat rerender pas totalHarga ganti
   useEffect(() => {
     // 
   }, [totalHarga])

@@ -1,6 +1,7 @@
 import { Navigation } from "react-minimal-side-navigation";
 import { useHistory, useLocation } from "react-router-dom";
 import React from "react";
+import Cookies from "universal-cookie";
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
 
 export const NavSidebar = () => {
@@ -24,7 +25,11 @@ export const NavSidebar = () => {
             activeItemId={location.pathname}
             onSelect={({ itemId }) => {
                 // TODO: Handle logout (itemId = "/login")
-                
+                if (itemId === "/login") {
+                  let cookies = new Cookies();
+                  cookies.remove('username', { path: '/' });
+                  cookies.remove('password', { path: '/' });
+                }
                 history.push(itemId);
             }}
             items={[
