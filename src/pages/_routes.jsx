@@ -79,7 +79,7 @@ const Routes = () => {
           { checkCookie() ? <BuatCoklat /> : <Redirect to="/login"/> }
         </Route>
         <Route path="/login">
-          { checkCookie("/") ? <Redirect to="/" /> : <Login /> }
+          { checkCookie() ? <Redirect to="/" /> : <Login /> }
         </Route>
         {/* TODO: Handle Logout */}
         <Route path="/">

@@ -35,7 +35,8 @@ const Login = () => {
                         // path : '/', meng-enable cookie buat semua page
                         cookies.set('username', username, { path: '/' })
                         cookies.set('password', password, { path: '/' })
-                        history.push("/home");
+                        // history.push("/home");
+                        window.location.reload();
                     }
                 }
             }

@@ -29,6 +29,7 @@ export const NavSidebar = () => {
                   let cookies = new Cookies();
                   cookies.remove('username', { path: '/' });
                   cookies.remove('password', { path: '/' });
+                  window.location.reload();
                 }
                 history.push(itemId);
             }}
